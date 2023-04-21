@@ -56,7 +56,7 @@ function locate()
     }
 
     var ok_status = 'success';
-
+//custom url
     $.ajax({
       type: 'POST',
       url: 'result_handler.php',
